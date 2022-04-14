@@ -55,7 +55,7 @@ public class UserController {
 
     @RequestMapping(value = "/selectByUserId", method = RequestMethod.GET)
     @ResponseBody
-    @ApiOperation(value = "查询所有用户1")
+    @ApiOperation(value = "查询所有用户12")
     public UserVO selectByUserId(@ApiParam(name = "id", value = "id", required = true) @RequestParam(required = true) Long id ) {
         UserVO uservo = userService.selectByImageId(id);
         return uservo;
