@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zzm.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.zzm.domain.User">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="status" jdbcType="BIGINT" property="status" />
+        <result column="image_id" jdbcType="BIGINT" property="imageId" />
+    </resultMap>
+    <sql id="BaseTable">
+        users
+    </sql>
+
+    <select id="selectByImageId" resultType="com.zzm.vo.UserVO">
+        SELECT u.id,u.name,u.status,i.filePath FROM `users` u join `images` i on u.image_id = #{id}
+    </select>
+</mapper>
